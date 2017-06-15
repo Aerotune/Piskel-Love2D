@@ -1,5 +1,7 @@
-Piskel is a library to parse `.piskel` files from Piskel http://www.piskelapp.com/ in Löve2D https://love2d.org/
+# Introduction
+PiskelLove is a library to parse `.piskel` files from Piskel http://www.piskelapp.com/ in Löve2D https://love2d.org/
 
+## Installation
 Move `piskel.lua` to your project and set a `json_decode` function for the library to use.
 
     local Piskel = require "piskel.lua"
@@ -10,7 +12,8 @@ Move `piskel.lua` to your project and set a `json_decode` function for the libra
 
 I'm currently using https://github.com/rxi/json.lua
 
-Now you can parse `.piskel` files from Piskel like this:
+## Parse .piskels
+Now you can parse `.piskel` files like this:
 
     local run_loop = Piskel.parse_file('run_loop.piskel')
 
@@ -39,3 +42,7 @@ The format returned by `Piskel.parse_file(filepath)` follows the json format use
 `imageDataList` is a Löve `ImageData` list
 
 `images` is a Löve `Image` list
+
+# Todo:
+
+* Make the parser more versatile with parsing different .piskel formats (Works with latest piskel version 15 june 2017)
