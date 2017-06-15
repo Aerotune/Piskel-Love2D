@@ -11,7 +11,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 local Piskel = {}
 
 local function extractImageDataList(raw_layer, width, height)
-  local base64 = string.sub(raw_layer.base64PNG, 23)
+  -- TODO: handle multiple chunks. For now it assumes there's one chunk.
+  local base64 = string.sub(raw_layer.chunks[1].base64PNG, 23)
   local file_data = love.filesystem.newFileData(base64, raw_layer.name, "base64")
   local image_data = love.image.newImageData(file_data)
   local image_data_width = image_data:getWidth()
